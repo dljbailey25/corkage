@@ -61,4 +61,37 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = 'none';
     }
-} 
+}
+
+document.getElementById('suggestionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const restaurantName = document.getElementById('restaurantName').value;
+    const website = document.getElementById('website').value;
+    const corkage = document.getElementById('corkage').value;
+    
+    // Create form data
+    const formData = new FormData();
+    formData.append('entry.648641937', restaurantName);
+    formData.append('entry.1146551704', website);
+    formData.append('entry.401103829', corkage);
+    
+    // Submit to Google Form
+    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCTlbrDc3I1dgKsh0318ZYgo0CrjSVevpBZJhyBJZzJYbpGw/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Required for Google Forms
+    })
+    .then(response => {
+        // Clear form
+        document.getElementById('suggestionForm').reset();
+        
+        // Show success message
+        alert('Thank you for your submission!');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting your suggestion. Please try again.');
+    });
+}); 
