@@ -31,32 +31,39 @@
             </div>
         </div>
 
-        <!-- Add suggestion form -->
-        <div class="suggestion-section">
-            <h2>Submit a Restaurant</h2>
-            <form 
-                id="suggestionForm" 
-                class="suggestion-form"
-                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCTlbrDc3I1dgKsh0318ZYgo0CrjSVevpBZJhyBJZzJYbpGw/formResponse"
-                method="post"
-                target="_blank">
-                <div class="form-group">
-                    <label for="restaurantName">Restaurant Name*</label>
-                    <input type="text" id="restaurantName" name="entry.648641937" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="website">Website*</label>
-                    <input type="url" id="website" name="entry.1146551704" required>
-                </div>
+        <!-- Add a button to open the suggestion modal -->
+        <button class="suggest-btn" onclick="openSuggestionModal()">Suggest a Restaurant</button>
 
-                <div class="form-group">
-                    <label for="corkage">Corkage Fee (£)*</label>
-                    <input type="number" id="corkage" name="entry.401103829" min="0" required>
-                </div>
+        <!-- Move the suggestion form to a new modal -->
+        <div id="suggestionModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeSuggestionModal()">&times;</span>
+                <div class="suggestion-section">
+                    <h2>Submit a Restaurant</h2>
+                    <form 
+                        id="suggestionForm" 
+                        class="suggestion-form"
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCTlbrDc3I1dgKsh0318ZYgo0CrjSVevpBZJhyBJZzJYbpGw/formResponse"
+                        method="post">
+                        <div class="form-group">
+                            <label for="restaurantName">Restaurant Name*</label>
+                            <input type="text" id="restaurantName" name="entry.648641937" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="website">Website*</label>
+                            <input type="url" id="website" name="entry.1146551704" required>
+                        </div>
 
-                <button type="submit" class="submit-btn">Submit Suggestion</button>
-            </form>
+                        <div class="form-group">
+                            <label for="corkage">Corkage Fee (£)*</label>
+                            <input type="number" id="corkage" name="entry.401103829" min="0" required>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit Suggestion</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

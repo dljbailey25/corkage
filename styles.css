@@ -45,24 +45,31 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
 }
 
 .modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 30px;
-    width: 70%;
-    max-width: 700px;
-    border-radius: 8px;
     position: relative;
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .close {
     position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 2rem;
     cursor: pointer;
+    color: #666;
+}
+
+.close:hover {
+    color: #333;
 }
 
 .restaurant-details {
@@ -94,39 +101,59 @@
 }
 
 .suggestion-form {
-    max-width: 500px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
     font-weight: 500;
+    color: #333;
 }
 
 .form-group input {
-    width: 100%;
-    padding: 8px;
+    padding: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-family: inherit;
+    font-size: 1rem;
 }
 
 .submit-btn {
-    background-color: #007bff;
+    padding: 0.75rem;
+    background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: inherit;
-    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.2s;
 }
 
 .submit-btn:hover {
-    background-color: #0056b3;
-} 
+    background-color: #45a049;
+}
+
+.suggest-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem 2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.suggest-btn:hover {
+    transform: translateY(-2px);
+}

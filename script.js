@@ -63,6 +63,23 @@ window.onclick = function(event) {
     }
 }
 
+function openSuggestionModal() {
+    document.getElementById('suggestionModal').style.display = 'block';
+}
+
+function closeSuggestionModal() {
+    document.getElementById('suggestionModal').style.display = 'none';
+}
+
+// Close modal if clicking outside of it
+window.onclick = function(event) {
+    const suggestionModal = document.getElementById('suggestionModal');
+    if (event.target === suggestionModal) {
+        suggestionModal.style.display = 'none';
+    }
+}
+
+// Form submission handler
 document.getElementById('suggestionForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -81,14 +98,17 @@ document.getElementById('suggestionForm').addEventListener('submit', function(e)
     fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCTlbrDc3I1dgKsh0318ZYgo0CrjSVevpBZJhyBJZzJYbpGw/formResponse', {
         method: 'POST',
         body: formData,
-        mode: 'no-cors' // Required for Google Forms
+        mode: 'no-cors'
     })
     .then(response => {
         // Clear form
         document.getElementById('suggestionForm').reset();
         
+        // Close modal
+        closeSuggestionModal();
+        
         // Show success message
-        alert('Thank you for your submission!');
+        alert('Thank you for your suggestion!');
     })
     .catch(error => {
         console.error('Error:', error);
