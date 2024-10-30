@@ -1,1 +1,35 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Corkage Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Restaurant Corkage Guide</h1>
+        <div class="restaurant-grid">
+            <div class="restaurant-card" onclick="showDetails('restaurant1')">
+                <h2>The Clove Club</h2>
+                <p class="style">Fine Dining</p>
+                <p class="corkage">Corkage: £50</p>
+            </div>
+            <div class="restaurant-card" onclick="showDetails('restaurant2')">
+                <h2>Portland</h2>
+                <p class="style">Modern European</p>
+                <p class="corkage">Corkage: £35</p>
+            </div>
+            <!-- Add more restaurant cards as needed -->
+        </div>
+
+        <div id="restaurantDetails" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeDetails()">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
