@@ -85,8 +85,13 @@ document.getElementById('suggestionForm').addEventListener('submit', function(e)
     
     // Get form values
     const restaurantName = document.getElementById('restaurantName').value;
-    const website = document.getElementById('website').value;
+    let website = document.getElementById('website').value;
     const corkage = document.getElementById('corkage').value;
+    
+    // Add https:// if no protocol is specified
+    if (website && !website.startsWith('http://') && !website.startsWith('https://')) {
+        website = 'https://' + website;
+    }
     
     // Create form data
     const formData = new FormData();
