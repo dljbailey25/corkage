@@ -1,6 +1,7 @@
 const restaurantData = {
     hawksmoor: {
         name: "Hawksmoor",
+        area: "Multiple Locations",
         corkageFee: "£5 corkage on Mondays",
         address: "Several locations in London: Piccadilly Circus, London Bridge, Bank, Shoredich, South Kensington, Covent Garden, Canary Wharf",
         postcode: "-",
@@ -10,6 +11,7 @@ const restaurantData = {
     },
     tayyabs: {
         name: "Tayyabs",
+        area: "East London",
         corkageFee: "Free every day",
         address: "83-89 Fieldgate Street",
         postcode: "E1 1JU",
@@ -19,6 +21,7 @@ const restaurantData = {
     },
     kitchenw8: {
         name: "Kitchen W8",
+        area: "West London",
         corkageFee: "Free on Sundays evenings",
         address: "11-13 Abingdon Road",
         postcode: "W8 6AH",
@@ -28,6 +31,7 @@ const restaurantData = {
     },
     cabotte: {
         name: "Cabotte",
+        area: "City",
         corkageFee: "Free on Mondays. £25 per bottle, £50 per Magnum and £75 for a Jeroboam",
         address: "48 Gresham Street",
         postcode: "EC2V 7AY",
@@ -37,6 +41,7 @@ const restaurantData = {
     },
     parsons: {
         name: "Parsons",
+        area: "Central London",
         corkageFee: "£25 per bottle",
         address: "39 Endell Street",
         postcode: "WC2H 9BA",
@@ -46,6 +51,7 @@ const restaurantData = {
     },
     ledbury: {
         name: "Ledbury",
+        area: "West London",
         corkageFee: "£75 per bottle",
         address: "127 Ledbury Road",
         postcode: "W11 2AQ",
@@ -55,6 +61,7 @@ const restaurantData = {
     },
     medlar: {
         name: "Medlar",
+        area: "West London",
         corkageFee: "£15 at Lunch, £30 at Dinner",
         address: "438 King's Rd, Chelsea",
         postcode: "SW10 0LJ",
@@ -64,6 +71,7 @@ const restaurantData = {
     },
     cloveclub: {
         name: "The Clove Club",
+        area: "East London",
         corkageFee: "£75 per bottle - one per two guests permitted",
         address: "Shoreditch Town Hall, 380 Old St",
         postcode: "EC1V 9LT",
@@ -73,6 +81,7 @@ const restaurantData = {
     },
     luca: {
         name: "Luca",
+        area: "East London",
         corkageFee: "£50 per bottle, for a maximum of two bottles",
         address: "88 St John St, Clerkenwell",
         postcode: "EC1M 4EH",
@@ -82,6 +91,7 @@ const restaurantData = {
     },
     noblerotsoho: {
         name: "Noble Rot Soho",
+        area: "Central London",
         corkageFee: "£25 per bottle & £50 per Magnum",
         address: "2 Greek Street",
         postcode: "W1D 4NB",
@@ -91,6 +101,7 @@ const restaurantData = {
     },
     noblerotmayfair: {
         name: "Noble Rot Mayfair",
+        area: "Central London",
         corkageFee: "£25 per bottle & £50 per Magnum",
         address: "5 Trebeck St, Shepherd Market",
         postcode: "W1J 7LT",
@@ -100,6 +111,7 @@ const restaurantData = {
     },
     trinity: {
         name: "Trinity",
+        area: "South London",
         corkageFee: "£35 for wine and £40 for sparkling",
         address: "4 The Polygon",
         postcode: "SW4 0JG",
@@ -109,6 +121,7 @@ const restaurantData = {
     },
     bandol: {
         name: "Bandol",
+        area: "West London",
         corkageFee: "£25 per bottle",
         address: "6 Hollywood Rd, Kensington",
         postcode: "SW10 9HU",
@@ -118,6 +131,7 @@ const restaurantData = {
     },
     quovadis: {
         name: "Quo Vadis",
+        area: "Central London",
         corkageFee: "£30 per bottle, £50 per bottle of Champagne",
         address: "28-29 Dean St, Soho",
         postcode: "W1D 3LL",
@@ -127,6 +141,7 @@ const restaurantData = {
     },
     lorne: {
         name: "Lorne",
+        area: "Central London",
         corkageFee: "£40 per bottle",
         address: "76 Wilton Road",
         postcode: "SW1V 1DE",
@@ -136,6 +151,7 @@ const restaurantData = {
     },
     taillevent: {
         name: "110 de Taillevent",
+        area: "Central London",
         corkageFee: "£50 per bottle & per table",
         address: "16 Cavendish Square, Marylebone",
         postcode: "W1G 9DD",
@@ -145,6 +161,7 @@ const restaurantData = {
     },
     latrompette: {
         name: "La Trompette",
+        area: "West London",
         corkageFee: "£40 per bottle - maximum of four 75cl bottles or two magnums per table",
         address: "3-7 Devonshire Road",
         postcode: "W4 2EU",
@@ -154,6 +171,7 @@ const restaurantData = {
     },
     chezbruce: {
         name: "Chez Bruce",
+        area: "South London",
         corkageFee: "£40 per bottle - maximum of four 75cl bottles or two magnums per table",
         address: "2 Bellevue Road, Wandsworth Common",
         postcode: "SW17 7EG",
@@ -262,4 +280,21 @@ document.getElementById('suggestionForm').addEventListener('submit', function(e)
         console.error('Error:', error);
         alert('There was an error submitting your suggestion. Please try again.');
     });
-}); 
+});
+
+// Filter function
+function filterRestaurants() {
+    const selectedArea = document.getElementById('areaFilter').value;
+    const cards = document.querySelectorAll('.restaurant-card');
+    
+    cards.forEach(card => {
+        const restaurantId = card.getAttribute('onclick').match(/'(.*?)'/)[1];
+        const restaurant = restaurantData[restaurantId];
+        
+        if (selectedArea === 'all' || restaurant.area === selectedArea) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+} 
