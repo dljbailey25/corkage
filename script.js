@@ -1,23 +1,166 @@
 const restaurantData = {
-    restaurant1: {
+    hawksmoor: {
+        name: "Hawksmoor",
+        corkageFee: "£5 corkage on Mondays",
+        address: "Several locations in London: Piccadilly Circus, London Bridge, Bank, Shoredich, South Kensington, Covent Garden, Canary Wharf",
+        postcode: "-",
+        contact: "-",
+        style: "Steak",
+        website: "thehawksmoor.com"
+    },
+    tayyabs: {
+        name: "Tayyabs",
+        corkageFee: "Free every day",
+        address: "83-89 Fieldgate Street",
+        postcode: "E1 1JU",
+        contact: "020 7247 9543",
+        style: "Indian",
+        website: "tayyabs.co.uk"
+    },
+    kitchenw8: {
+        name: "Kitchen W8",
+        corkageFee: "Free on Sundays evenings",
+        address: "11-13 Abingdon Road",
+        postcode: "W8 6AH",
+        contact: "020 7937 0120",
+        style: "Modern European",
+        website: "kitchenw8.com"
+    },
+    cabotte: {
+        name: "Cabotte",
+        corkageFee: "Free on Mondays. £25 per bottle, £50 per Magnum and £75 for a Jeroboam",
+        address: "48 Gresham Street",
+        postcode: "EC2V 7AY",
+        contact: "020 7600 1616",
+        style: "Modern French",
+        website: "cabotte.co.uk"
+    },
+    parsons: {
+        name: "Parsons",
+        corkageFee: "£25 per bottle",
+        address: "39 Endell Street",
+        postcode: "WC2H 9BA",
+        contact: "020 3422 0221",
+        style: "Seafood",
+        website: "thebirdinhandlondon.com"
+    },
+    ledbury: {
+        name: "Ledbury",
+        corkageFee: "£75 per bottle",
+        address: "127 Ledbury Road",
+        postcode: "W11 2AQ",
+        contact: "020 7792 9090",
+        style: "3 Michelin stars restaurant. Modern cuisine",
+        website: "theledbury.com"
+    },
+    medlar: {
+        name: "Medlar",
+        corkageFee: "£15 at Lunch, £30 at Dinner",
+        address: "438 King's Rd, Chelsea",
+        postcode: "SW10 0LJ",
+        contact: "020 7349 1900",
+        style: "High-end, Modern French food with global influences",
+        website: "medlarrestaurant.co.uk"
+    },
+    cloveclub: {
         name: "The Clove Club",
-        corkageFee: "£50",
-        address: "380 Old St",
+        corkageFee: "£75 per bottle - one per two guests permitted",
+        address: "Shoreditch Town Hall, 380 Old St",
         postcode: "EC1V 9LT",
         contact: "020 7729 6496",
-        style: "Fine Dining",
-        website: "https://thecloveclub.com"
+        style: "Cutting-edge restaurant and bar for innovative British menu",
+        website: "thecloveclub.com"
     },
-    restaurant2: {
-        name: "Portland",
-        corkageFee: "£35",
-        address: "113 Great Portland St",
-        postcode: "W1W 6QQ",
-        contact: "020 7436 3261",
+    luca: {
+        name: "Luca",
+        corkageFee: "£50 per bottle, for a maximum of two bottles",
+        address: "88 St John St, Clerkenwell",
+        postcode: "EC1M 4EH",
+        contact: "020 3859 3000",
+        style: "British seasonal ingredients through an italian lens",
+        website: "luca.restaurant"
+    },
+    noblerotsoho: {
+        name: "Noble Rot Soho",
+        corkageFee: "£25 per bottle & £50 per Magnum",
+        address: "2 Greek Street",
+        postcode: "W1D 4NB",
+        contact: "020 7183 8190",
         style: "Modern European",
-        website: "https://portlandrestaurant.co.uk"
+        website: "noblerot.co.uk"
+    },
+    noblerotmayfair: {
+        name: "Noble Rot Mayfair",
+        corkageFee: "£25 per bottle & £50 per Magnum",
+        address: "5 Trebeck St, Shepherd Market",
+        postcode: "W1J 7LT",
+        contact: "020 7101 6770",
+        style: "Modern European",
+        website: "noblerot.co.uk"
+    },
+    trinity: {
+        name: "Trinity",
+        corkageFee: "£35 for wine and £40 for sparkling",
+        address: "4 The Polygon",
+        postcode: "SW4 0JG",
+        contact: "020 7622 1199",
+        style: "Modern Cuisine",
+        website: "trinityrestaurant.co.uk"
+    },
+    bandol: {
+        name: "Bandol",
+        corkageFee: "£25 per bottle",
+        address: "6 Hollywood Rd, Kensington",
+        postcode: "SW10 9HU",
+        contact: "0207 351 1322",
+        style: "Elegant restaurant showcasing the flavours & style of the South of France",
+        website: "barbandol.co.uk"
+    },
+    quovadis: {
+        name: "Quo Vadis",
+        corkageFee: "£30 per bottle, £50 per bottle of Champagne",
+        address: "28-29 Dean St, Soho",
+        postcode: "W1D 3LL",
+        contact: "0207 440 1450",
+        style: "Modern British cuisine",
+        website: "quovadissoho.co.uk"
+    },
+    lorne: {
+        name: "Lorne",
+        corkageFee: "£40 per bottle",
+        address: "76 Wilton Road",
+        postcode: "SW1V 1DE",
+        contact: "020 3327 0210",
+        style: "Modern British",
+        website: "lornerestaurant.co.uk"
+    },
+    taillevent: {
+        name: "110 de Taillevent",
+        corkageFee: "£50 per bottle & per table",
+        address: "16 Cavendish Square, Marylebone",
+        postcode: "W1G 9DD",
+        contact: "020 314 16016",
+        style: "Classic bistro offering an ample wine list and upmarket French menus",
+        website: "les-110-taillevent-london.com"
+    },
+    latrompette: {
+        name: "La Trompette",
+        corkageFee: "£40 per bottle - maximum of four 75cl bottles or two magnums per table",
+        address: "3-7 Devonshire Road",
+        postcode: "W4 2EU",
+        contact: "020 8747 1836",
+        style: "High-end french cuisine",
+        website: "latrompette.co.uk"
+    },
+    chezbruce: {
+        name: "Chez Bruce",
+        corkageFee: "£40 per bottle - maximum of four 75cl bottles or two magnums per table",
+        address: "2 Bellevue Road, Wandsworth Common",
+        postcode: "SW17 7EG",
+        contact: "020 8672 0114",
+        style: "High-end french cuisine",
+        website: "chezbruce.co.uk"
     }
-    // Add more restaurants as needed
 };
 
 function showDetails(restaurantId) {
