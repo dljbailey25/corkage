@@ -310,24 +310,28 @@ h1 {
 }
 
 .filter-btn {
+    padding: 0.75rem 1.5rem;
     background-color: white;
     color: var(--text);
     border: 1px solid var(--melon);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Lato', sans-serif;
     transition: all 0.2s ease;
 }
 
 .filter-btn:hover {
     background-color: var(--melon);
-    color: var(--text);
 }
 
 .filter-btn.active {
-    background-color: white;
-    color: var(--text);
-    border: 2px solid var(--wine);
+    background-color: var(--wine);
+    color: white;
+    border-color: var(--wine);
 }
 
-/* Common button style for both suggest and submit buttons */
+/* Suggest and Submit Buttons */
 .suggest-btn,
 .submit-btn {
     padding: 0.75rem 1.5rem;
@@ -339,14 +343,15 @@ h1 {
     font-size: 0.9rem;
     font-family: 'Lato', sans-serif;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(119, 51, 68, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     transition: all 0.2s ease;
 }
 
 .suggest-btn:hover,
 .submit-btn:hover {
     background-color: var(--melon);
-    color: var(--text);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Specific positioning for suggest button */
