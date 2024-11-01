@@ -8,7 +8,6 @@
 
 body {
     background-color: var(--papaya-whip);
-    color: var(--wine);
 }
 
 .container {
@@ -26,12 +25,12 @@ body {
 }
 
 .restaurant-card {
+    background-color: white;
     border: 1px solid var(--melon);
     border-radius: 8px;
     padding: 20px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    background-color: white;
 }
 
 .restaurant-card:hover {
@@ -310,13 +309,13 @@ h1 {
 .filter-btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
+    background-color: white;
+    color: var(--wine);
     border: 1px solid var(--melon);
     border-radius: 4px;
-    background-color: white;
     font-family: 'Lato', sans-serif;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: var(--wine);
 }
 
 .filter-btn:hover {
