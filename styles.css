@@ -5,10 +5,11 @@
     --light-yellow: #fffeda;
     --moonstone: #63b0cd;
     --text: #231111;
+    --off-white: #FFFDFA;
 }
 
 body {
-    background-color: var(--light-yellow);
+    background-color: var(--off-white);
     color: var(--text);
 }
 
@@ -27,7 +28,7 @@ body {
 }
 
 .restaurant-card {
-    background-color: white;
+    background-color: var(--off-white);
     border: 1px solid var(--melon);
     border-radius: 8px;
     padding: 20px;
@@ -71,7 +72,7 @@ body {
 
 .modal-content {
     position: relative;
-    background-color: white;
+    background-color: var(--off-white);
     margin: 10% auto;
     padding: 2.5rem;
     width: 90%;
@@ -230,7 +231,7 @@ body {
     bottom: 2rem;
     right: 2rem;
     padding: 0.75rem 1.5rem;
-    background-color: white;
+    background-color: var(--off-white);
     color: var(--text);
     border: 1px solid var(--melon);
     border-radius: 4px;
@@ -311,7 +312,7 @@ h1 {
 
 .filter-btn {
     padding: 0.75rem 1.5rem;
-    background-color: white;
+    background-color: var(--off-white);
     color: var(--text);
     border: 1px solid var(--melon);
     border-radius: 4px;
@@ -327,7 +328,7 @@ h1 {
 
 .filter-btn.active {
     background-color: var(--wine);
-    color: white;
+    color: var(--off-white);
     border-color: var(--wine);
 }
 
@@ -335,7 +336,7 @@ h1 {
 .suggest-btn,
 .submit-btn {
     padding: 0.75rem 1.5rem;
-    background-color: white;
+    background-color: var(--off-white);
     color: var(--text);
     border: 1px solid var(--melon);
     border-radius: 4px;
@@ -383,4 +384,9 @@ h1 {
 .restaurant-card .style,
 .restaurant-card .corkage {
     color: var(--moonstone);
+}
+
+/* Any other elements with white text */
+.modal-content .close {
+    color: var(--off-white);
 }
