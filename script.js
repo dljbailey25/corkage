@@ -66,16 +66,9 @@ function showDetails(restaurantId) {
     modal.style.display = 'block';
 }
 
+// Modal functions
 function closeDetails() {
     document.getElementById('restaurantDetails').style.display = 'none';
-}
-
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-    const modal = document.getElementById('restaurantDetails');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
 }
 
 function openSuggestionModal() {
@@ -86,13 +79,21 @@ function closeSuggestionModal() {
     document.getElementById('suggestionModal').style.display = 'none';
 }
 
-// Close modal if clicking outside of it
+// Close modal when clicking outside
 window.onclick = function(event) {
+    const detailsModal = document.getElementById('restaurantDetails');
     const suggestionModal = document.getElementById('suggestionModal');
-    if (event.target === suggestionModal) {
+    if (event.target === detailsModal || event.target === suggestionModal) {
+        detailsModal.style.display = 'none';
         suggestionModal.style.display = 'none';
     }
 }
+
+// Expose functions to window object for HTML onclick attributes
+window.showDetails = showDetails;
+window.closeDetails = closeDetails;
+window.openSuggestionModal = openSuggestionModal;
+window.closeSuggestionModal = closeSuggestionModal;
 
 // Form submission handler
 document.getElementById('suggestionForm').addEventListener('submit', function(e) {
