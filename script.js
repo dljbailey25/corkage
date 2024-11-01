@@ -12,10 +12,10 @@ async function fetchData() {
     }
 }
 
-// Function to render restaurant cards
+// Function to render restaurant cards - showing only summary
 function renderRestaurantCards() {
     const grid = document.querySelector('.restaurant-grid');
-    grid.innerHTML = ''; // Clear existing cards
+    grid.innerHTML = '';
     
     Object.entries(restaurantData).forEach(([id, restaurant]) => {
         const card = document.createElement('div');
@@ -26,7 +26,7 @@ function renderRestaurantCards() {
         card.innerHTML = `
             <h2>${restaurant.name}</h2>
             <p class="style">${restaurant.style}</p>
-            <p class="corkage">Corkage: ${restaurant.corkageFee}</p>
+            <p class="corkage">${restaurant.corkageFeeSummary}</p>
         `;
         
         grid.appendChild(card);
@@ -69,6 +69,7 @@ function filterRestaurants(selectedArea) {
 // Initialize the page
 document.addEventListener('DOMContentLoaded', fetchData);
 
+// Show details modal - showing only detail
 function showDetails(restaurantId) {
     const restaurant = restaurantData[restaurantId];
     const modal = document.getElementById('restaurantDetails');
@@ -77,8 +78,11 @@ function showDetails(restaurantId) {
     content.innerHTML = `
         <h2>${restaurant.name}</h2>
         <div class="restaurant-details">
-            <span class="detail-label">Corkage Fee:</span>
-            <span>${restaurant.corkageFee}</span>
+            <span class="detail-label">Area:</span>
+            <span>${restaurant.area}</span>
+            
+            <span class="detail-label">Corkage:</span>
+            <span>${restaurant.corkageFeeDetail}</span>
             
             <span class="detail-label">Address:</span>
             <span>${restaurant.address}</span>
@@ -93,7 +97,7 @@ function showDetails(restaurantId) {
             <span>${restaurant.style}</span>
             
             <span class="detail-label">Website:</span>
-            <span><a href="${restaurant.website}" class="website-link" target="_blank">${restaurant.website}</a></span>
+            <span><a href="https://${restaurant.website}" target="_blank">${restaurant.website}</a></span>
         </div>
     `;
     
