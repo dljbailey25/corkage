@@ -20,6 +20,7 @@ function renderRestaurantCards() {
     Object.entries(restaurantData).forEach(([id, restaurant]) => {
         const card = document.createElement('div');
         card.className = 'restaurant-card';
+        card.dataset.restaurantId = id;
         card.onclick = () => showDetails(id);
         
         card.innerHTML = `
@@ -34,40 +35,34 @@ function renderRestaurantCards() {
 
 // Setup filter buttons
 function setupFilters() {
-    const buttons = document.querySelectorAll('.filter-btn');
+    const filterButtons = document.querySelectorAll('.filter-btn');
     
-    buttons.forEach(button => {
-        // Remove any existing event listeners
-        button.removeEventListener('click', handleFilterClick);
-        // Add new event listener
-        button.addEventListener('click', handleFilterClick);
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Filter restaurants
+            const selectedArea = button.dataset.area;
+            filterRestaurants(selectedArea);
+        });
     });
 }
 
-// Handle filter button clicks
-function handleFilterClick(e) {
-    const buttons = document.querySelectorAll('.filter-btn');
+// Filter restaurants based on selected area
+function filterRestaurants(selectedArea) {
+    const cards = document.querySelectorAll('.restaurant-card');
     
-    buttons.forEach(button => {
-        // Remove active class from all buttons
-        buttons.forEach(btn => btn.classList.remove('active'));
+    cards.forEach(card => {
+        const restaurantId = card.dataset.restaurantId;
+        const restaurant = restaurantData[restaurantId];
         
-        // Add active class to clicked button
-        e.target.classList.add('active');
-        
-        const selectedArea = e.target.dataset.area;
-        const cards = document.querySelectorAll('.restaurant-card');
-        
-        cards.forEach(card => {
-            const restaurantId = card.getAttribute('onclick').match(/'(.*?)'/)[1];
-            const restaurant = restaurantData[restaurantId];
-            
-            if (selectedArea === 'all' || restaurant.area === selectedArea) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+        if (selectedArea === 'all' || restaurant.area === selectedArea) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
     });
 }
 
