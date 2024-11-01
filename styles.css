@@ -50,22 +50,79 @@
 
 .modal-content {
     position: relative;
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 2rem;
-    width: 80%;
-    max-width: 600px;
+    background-color: white;
+    margin: 10% auto;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 500px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.modal-content h2 {
+    margin: 0 0 1.5rem 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+}
+
+#suggestionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.submit-btn {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #444;
 }
 
 .close {
     position: absolute;
-    right: 1rem;
-    top: 0.5rem;
-    font-size: 2rem;
-    cursor: pointer;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.5rem;
     color: #666;
+    cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .close:hover {
@@ -245,4 +302,42 @@ h1 {
     background-color: #333;
     color: white;
     border-color: #333;
+}
+
+/* Common button style for both suggest and submit buttons */
+.suggest-btn,
+.submit-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+/* Specific positioning for suggest button */
+.suggest-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+}
+
+/* Shared hover state */
+.suggest-btn:hover,
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-color: #999;
+}
+
+/* Form-specific spacing for submit button */
+.submit-btn {
+    margin-top: 0.5rem;
+    align-self: flex-end; /* Aligns the submit button to the right */
 }

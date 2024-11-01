@@ -2,8 +2,8 @@
     "hawksmoor": {
         "name": "Hawksmoor",
         "area": "Multiple Locations",
-        "corkageFeeSummary": "£5",
-        "corkageFeeDetail": "£5 corkage on Mondays",
+        "corkageFeeSummary": "£5 Mondays",
+        "corkageFeeDetail": "£5 on Mondays, £25 Tuesday - Sunday",
         "address": "Several locations in London: Piccadilly Circus, London Bridge, Bank, Shoredich, South Kensington, Covent Garden, Canary Wharf",
         "postcode": "-",
         "contact": "-",
