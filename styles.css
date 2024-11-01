@@ -390,3 +390,15 @@ h1 {
 .modal-content .close {
     color: var(--off-white);
 }
+
+.wine-icon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    color: var(--wine);
+}
+
+.wine-icon svg {
+    width: 24px;
+    height: 24px;
+}
