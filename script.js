@@ -282,19 +282,33 @@ document.getElementById('suggestionForm').addEventListener('submit', function(e)
     });
 });
 
-// Filter function
 function filterRestaurants() {
-    const selectedArea = document.getElementById('areaFilter').value;
-    const cards = document.querySelectorAll('.restaurant-card');
+    const buttons = document.querySelectorAll('.filter-btn');
     
-    cards.forEach(card => {
-        const restaurantId = card.getAttribute('onclick').match(/'(.*?)'/)[1];
-        const restaurant = restaurantData[restaurantId];
-        
-        if (selectedArea === 'all' || restaurant.area === selectedArea) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            e.target.classList.add('active');
+            
+            const selectedArea = e.target.dataset.area;
+            const cards = document.querySelectorAll('.restaurant-card');
+            
+            cards.forEach(card => {
+                const restaurantId = card.getAttribute('onclick').match(/'(.*?)'/)[1];
+                const restaurant = restaurantData[restaurantId];
+                
+                if (selectedArea === 'all' || restaurant.area === selectedArea) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
     });
-} 
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', filterRestaurants);

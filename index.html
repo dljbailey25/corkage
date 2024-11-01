@@ -11,14 +11,12 @@
     <div class="container">
         <h1>London Corkage Club</h1>
         <div class="filter-section">
-            <select id="areaFilter" onchange="filterRestaurants()">
-                <option value="all">All Areas</option>
-                <option value="Central London">Central London</option>
-                <option value="East London">East London</option>
-                <option value="West London">West London</option>
-                <option value="South London">South London</option>
-                <option value="City">The City</option>
-            </select>
+            <button class="filter-btn active" data-area="all">All Areas</button>
+            <button class="filter-btn" data-area="Central London">Central London</button>
+            <button class="filter-btn" data-area="East London">East London</button>
+            <button class="filter-btn" data-area="West London">West London</button>
+            <button class="filter-btn" data-area="South London">South London</button>
+            <button class="filter-btn" data-area="City">The City</button>
         </div>
         <div class="restaurant-grid">
             <div class="restaurant-card" onclick="showDetails('hawksmoor')">
@@ -42,7 +40,7 @@
             <div class="restaurant-card" onclick="showDetails('cabotte')">
                 <h2>Cabotte</h2>
                 <p class="style">Modern French</p>
-                <p class="corkage">Corkage: Free on Mondays</p>
+                <p class="corkage">Corkage: From £25</p>
             </div>
 
             <div class="restaurant-card" onclick="showDetails('parsons')">
@@ -108,6 +106,24 @@
             <div class="restaurant-card" onclick="showDetails('lorne')">
                 <h2>Lorne</h2>
                 <p class="style">Modern British</p>
+                <p class="corkage">Corkage: £40</p>
+            </div>
+
+            <div class="restaurant-card" onclick="showDetails('taillevent')">
+                <h2>110 de Taillevent</h2>
+                <p class="style">French</p>
+                <p class="corkage">Corkage: £50</p>
+            </div>
+
+            <div class="restaurant-card" onclick="showDetails('latrompette')">
+                <h2>La Trompette</h2>
+                <p class="style">French</p>
+                <p class="corkage">Corkage: £40</p>
+            </div>
+
+            <div class="restaurant-card" onclick="showDetails('chezbruce')">
+                <h2>Chez Bruce</h2>
+                <p class="style">French</p>
                 <p class="corkage">Corkage: £40</p>
             </div>
         </div>

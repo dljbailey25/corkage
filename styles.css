@@ -217,26 +217,32 @@ h1 {
 .filter-section {
     margin: 2rem 0;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
 }
 
-#areaFilter {
+.filter-btn {
     padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: white;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lato', sans-serif;
     cursor: pointer;
-    min-width: 200px;
     transition: all 0.2s ease;
+    color: #333;
 }
 
-#areaFilter:hover {
-    border-color: #4CAF50;
+.filter-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #999;
+    transform: translateY(-1px);
 }
 
-#areaFilter:focus {
-    outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.1);
+.filter-btn.active {
+    background-color: #333;
+    color: white;
+    border-color: #333;
 }
