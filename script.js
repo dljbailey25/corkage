@@ -179,3 +179,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Add event listener for ESC key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const detailsModal = document.getElementById('restaurantDetails');
+        const suggestionModal = document.getElementById('suggestionModal');
+        
+        // Close any open modal
+        if (detailsModal) detailsModal.style.display = 'none';
+        if (suggestionModal) suggestionModal.style.display = 'none';
+    }
+});
