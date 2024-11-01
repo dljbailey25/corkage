@@ -19,115 +19,10 @@
             <button class="filter-btn" data-area="City">The City</button>
         </div>
         <div class="restaurant-grid">
-            <div class="restaurant-card" onclick="showDetails('hawksmoor')">
-                <h2>Hawksmoor</h2>
-                <p class="style">Steak</p>
-                <p class="corkage">Corkage: £5 on Mondays</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('tayyabs')">
-                <h2>Tayyabs</h2>
-                <p class="style">Indian</p>
-                <p class="corkage">Corkage: Free</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('kitchenw8')">
-                <h2>Kitchen W8</h2>
-                <p class="style">Modern European</p>
-                <p class="corkage">Corkage: Free on Sundays</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('cabotte')">
-                <h2>Cabotte</h2>
-                <p class="style">Modern French</p>
-                <p class="corkage">Corkage: From £25</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('parsons')">
-                <h2>Parsons</h2>
-                <p class="style">Seafood</p>
-                <p class="corkage">Corkage: £25</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('ledbury')">
-                <h2>Ledbury</h2>
-                <p class="style">Modern Cuisine</p>
-                <p class="corkage">Corkage: £75</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('medlar')">
-                <h2>Medlar</h2>
-                <p class="style">Modern French</p>
-                <p class="corkage">Corkage: £15-30</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('cloveclub')">
-                <h2>The Clove Club</h2>
-                <p class="style">Modern British</p>
-                <p class="corkage">Corkage: £75</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('luca')">
-                <h2>Luca</h2>
-                <p class="style">British-Italian</p>
-                <p class="corkage">Corkage: £50</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('noblerotsoho')">
-                <h2>Noble Rot Soho</h2>
-                <p class="style">Modern European</p>
-                <p class="corkage">Corkage: £25</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('noblerotmayfair')">
-                <h2>Noble Rot Mayfair</h2>
-                <p class="style">Modern European</p>
-                <p class="corkage">Corkage: £25</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('trinity')">
-                <h2>Trinity</h2>
-                <p class="style">Modern Cuisine</p>
-                <p class="corkage">Corkage: £35-40</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('bandol')">
-                <h2>Bandol</h2>
-                <p class="style">French</p>
-                <p class="corkage">Corkage: £25</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('quovadis')">
-                <h2>Quo Vadis</h2>
-                <p class="style">Modern British</p>
-                <p class="corkage">Corkage: £30-50</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('lorne')">
-                <h2>Lorne</h2>
-                <p class="style">Modern British</p>
-                <p class="corkage">Corkage: £40</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('taillevent')">
-                <h2>110 de Taillevent</h2>
-                <p class="style">French</p>
-                <p class="corkage">Corkage: £50</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('latrompette')">
-                <h2>La Trompette</h2>
-                <p class="style">French</p>
-                <p class="corkage">Corkage: £40</p>
-            </div>
-
-            <div class="restaurant-card" onclick="showDetails('chezbruce')">
-                <h2>Chez Bruce</h2>
-                <p class="style">French</p>
-                <p class="corkage">Corkage: £40</p>
-            </div>
+            <!-- Cards will be rendered here by JavaScript -->
         </div>
 
+        <!-- Keep your existing modals -->
         <div id="restaurantDetails" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeDetails()">&times;</span>
@@ -135,41 +30,9 @@
             </div>
         </div>
 
-        <!-- Add a button to open the suggestion modal -->
         <button class="suggest-btn" onclick="openSuggestionModal()">Suggest a Restaurant</button>
-
-        <!-- Move the suggestion form to a new modal -->
-        <div id="suggestionModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeSuggestionModal()">&times;</span>
-                <div class="suggestion-section">
-                    <h2>Submit a Restaurant</h2>
-                    <form 
-                        id="suggestionForm" 
-                        class="suggestion-form"
-                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCTlbrDc3I1dgKsh0318ZYgo0CrjSVevpBZJhyBJZzJYbpGw/formResponse"
-                        method="post">
-                        <div class="form-group">
-                            <label for="restaurantName">Restaurant Name*</label>
-                            <input type="text" id="restaurantName" name="entry.648641937" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="website">Website*</label>
-                            <input type="text" id="website" name="entry.1146551704" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="corkage">Corkage Fee (£)*</label>
-                            <input type="number" id="corkage" name="entry.401103829" min="0" required>
-                        </div>
-
-                        <button type="submit" class="submit-btn">Submit Suggestion</button>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="data.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html> 
