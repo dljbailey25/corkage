@@ -1,3 +1,16 @@
+:root {
+    --wine: #773344;
+    --melon: #ffa9a3;
+    --papaya-whip: #f8ecd4;
+    --light-yellow: #fffeda;
+    --moonstone: #63b0cd;
+}
+
+body {
+    background-color: var(--papaya-whip);
+    color: var(--wine);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -13,27 +26,34 @@
 }
 
 .restaurant-card {
-    border: 1px solid #ddd;
+    border: 1px solid var(--melon);
     border-radius: 8px;
     padding: 20px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    background-color: #f8f9fa;
+    background-color: white;
 }
 
 .restaurant-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    background-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(119, 51, 68, 0.1);
+    border-color: var(--wine);
+}
+
+.restaurant-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--wine);
 }
 
 .style {
-    color: #666;
+    color: var(--moonstone);
     font-style: italic;
 }
 
 .corkage {
-    color: #2c5282;
+    color: var(--moonstone);
     font-weight: bold;
 }
 
@@ -56,12 +76,14 @@
     width: 90%;
     max-width: 500px;
     border-radius: 8px;
+    border: 1px solid var(--melon);
 }
 
 .modal-content h2 {
     margin: 0 0 1.5rem 0;
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
+    color: var(--wine);
 }
 
 #suggestionForm {
@@ -80,39 +102,44 @@
     font-family: 'Lato', sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
-    color: #333;
+    color: var(--wine);
 }
 
 .form-group input {
     padding: 0.75rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--melon);
     border-radius: 4px;
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     transition: border-color 0.2s ease;
+    background-color: white;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #666;
+    border-color: var(--wine);
+    background-color: var(--light-yellow);
 }
 
 .submit-btn {
     margin-top: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background-color: #333;
-    color: white;
-    border: none;
+    background-color: white;
+    color: var(--wine);
+    border: 1px solid var(--melon);
     border-radius: 4px;
     font-family: 'Lato', sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(119, 51, 68, 0.1);
 }
 
 .submit-btn:hover {
-    background-color: #444;
+    background-color: var(--light-yellow);
+    border-color: var(--wine);
+    box-shadow: 0 4px 12px rgba(119, 51, 68, 0.15);
 }
 
 .close {
@@ -120,13 +147,13 @@
     right: 1.5rem;
     top: 1.5rem;
     font-size: 1.5rem;
-    color: #666;
+    color: var(--wine);
     cursor: pointer;
     transition: color 0.2s ease;
 }
 
 .close:hover {
-    color: #333;
+    color: var(--moonstone);
 }
 
 .restaurant-details {
@@ -138,11 +165,11 @@
 
 .detail-label {
     font-weight: bold;
-    color: #444;
+    color: var(--wine);
 }
 
 .website-link {
-    color: #2c5282;
+    color: var(--moonstone);
     text-decoration: none;
 }
 
@@ -171,7 +198,7 @@
 
 .form-group label {
     font-weight: 500;
-    color: #333;
+    color: var(--wine);
 }
 
 .form-group input {
@@ -201,30 +228,30 @@
     bottom: 2rem;
     right: 2rem;
     padding: 0.75rem 1.5rem;
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #333;
-    border: 1px solid #ddd;
+    background-color: white;
+    color: var(--wine);
+    border: 1px solid var(--melon);
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
     font-family: 'Lato', sans-serif;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(119, 51, 68, 0.1);
     transition: all 0.2s ease;
     z-index: 999;
 }
 
 .suggest-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    border-color: #999;
+    box-shadow: 0 4px 12px rgba(119, 51, 68, 0.15);
+    border-color: var(--wine);
 }
 
 /* Base font styles */
 body {
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: var(--wine);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -283,40 +310,40 @@ h1 {
 .filter-btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--melon);
     border-radius: 4px;
     background-color: white;
     font-family: 'Lato', sans-serif;
     cursor: pointer;
     transition: all 0.2s ease;
-    color: #333;
+    color: var(--wine);
 }
 
 .filter-btn:hover {
-    background-color: #f5f5f5;
-    border-color: #999;
+    background-color: var(--light-yellow);
+    border-color: var(--wine);
     transform: translateY(-1px);
 }
 
 .filter-btn.active {
-    background-color: #333;
+    background-color: var(--wine);
     color: white;
-    border-color: #333;
+    border-color: var(--wine);
 }
 
 /* Common button style for both suggest and submit buttons */
 .suggest-btn,
 .submit-btn {
     padding: 0.75rem 1.5rem;
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #333;
-    border: 1px solid #ddd;
+    background-color: white;
+    color: var(--wine);
+    border: 1px solid var(--melon);
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
     font-family: 'Lato', sans-serif;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(119, 51, 68, 0.1);
     transition: all 0.2s ease;
 }
 
@@ -332,8 +359,8 @@ h1 {
 .suggest-btn:hover,
 .submit-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    border-color: #999;
+    box-shadow: 0 4px 12px rgba(119, 51, 68, 0.15);
+    border-color: var(--wine);
 }
 
 /* Form-specific spacing for submit button */
