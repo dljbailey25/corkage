@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: var(--papaya-whip);
+    background-color: var(--light-yellow);
     color: var(--text);
 }
 
@@ -310,14 +310,9 @@ h1 {
 }
 
 .filter-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
     background-color: white;
     color: var(--text);
     border: 1px solid var(--melon);
-    border-radius: 4px;
-    font-family: 'Lato', sans-serif;
-    cursor: pointer;
     transition: all 0.2s ease;
 }
 
@@ -327,8 +322,9 @@ h1 {
 }
 
 .filter-btn.active {
-    background-color: var(--wine);
-    color: white;
+    background-color: white;
+    color: var(--text);
+    border: 2px solid var(--wine);
 }
 
 /* Common button style for both suggest and submit buttons */
@@ -373,4 +369,13 @@ h1 {
 .submit-btn {
     margin-top: 0.5rem;
     align-self: flex-end; /* Aligns the submit button to the right */
+}
+
+.restaurant-card h2 {
+    color: var(--text);
+}
+
+.restaurant-card .style,
+.restaurant-card .corkage {
+    color: var(--moonstone);
 }
