@@ -6,7 +6,7 @@ async function fetchData() {
         const response = await fetch('data.json');
         restaurantData = await response.json();
         renderRestaurantCards();
-        filterRestaurants();
+        setupFilters();
     } catch (error) {
         console.error('Error loading restaurant data:', error);
     }
@@ -29,6 +29,45 @@ function renderRestaurantCards() {
         `;
         
         grid.appendChild(card);
+    });
+}
+
+// Setup filter buttons
+function setupFilters() {
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    buttons.forEach(button => {
+        // Remove any existing event listeners
+        button.removeEventListener('click', handleFilterClick);
+        // Add new event listener
+        button.addEventListener('click', handleFilterClick);
+    });
+}
+
+// Handle filter button clicks
+function handleFilterClick(e) {
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    buttons.forEach(button => {
+        // Remove active class from all buttons
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        e.target.classList.add('active');
+        
+        const selectedArea = e.target.dataset.area;
+        const cards = document.querySelectorAll('.restaurant-card');
+        
+        cards.forEach(card => {
+            const restaurantId = card.getAttribute('onclick').match(/'(.*?)'/)[1];
+            const restaurant = restaurantData[restaurantId];
+            
+            if (selectedArea === 'all' || restaurant.area === selectedArea) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     });
 }
 
@@ -136,31 +175,3 @@ document.getElementById('suggestionForm').addEventListener('submit', function(e)
         alert('There was an error submitting your suggestion. Please try again.');
     });
 });
-
-function filterRestaurants() {
-    const buttons = document.querySelectorAll('.filter-btn');
-    
-    buttons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            // Remove active class from all buttons
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            e.target.classList.add('active');
-            
-            const selectedArea = e.target.dataset.area;
-            const cards = document.querySelectorAll('.restaurant-card');
-            
-            cards.forEach(card => {
-                const restaurantId = card.getAttribute('onclick').match(/'(.*?)'/)[1];
-                const restaurant = restaurantData[restaurantId];
-                
-                if (selectedArea === 'all' || restaurant.area === selectedArea) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-}
