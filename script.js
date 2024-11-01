@@ -135,43 +135,48 @@ window.openSuggestionModal = openSuggestionModal;
 window.closeSuggestionModal = closeSuggestionModal;
 
 // Form submission handler
-document.getElementById('suggestionForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    fetchData();
     
-    // Get form values
-    const restaurantName = document.getElementById('restaurantName').value;
-    let website = document.getElementById('website').value;
-    const corkage = document.getElementById('corkage').value;
-    
-    // Add https:// if no protocol is specified
-    if (website && !website.startsWith('http://') && !website.startsWith('https://')) {
-        website = 'https://' + website;
-    }
-    
-    // Create form data
-    const formData = new FormData();
-    formData.append('entry.648641937', restaurantName);
-    formData.append('entry.1146551704', website);
-    formData.append('entry.401103829', corkage);
-    
-    // Submit to Google Form
-    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCTlbrDc3I1dgKsh0318ZYgo0CrjSVevpBZJhyBJZzJYbpGw/formResponse', {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-    })
-    .then(response => {
-        // Clear form
-        document.getElementById('suggestionForm').reset();
+    // Add form submission handler
+    document.getElementById('suggestionForm').addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        // Close modal
-        closeSuggestionModal();
+        // Get form values
+        const restaurantName = document.getElementById('restaurantName').value;
+        let website = document.getElementById('website').value;
+        const corkage = document.getElementById('corkage').value;
         
-        // Show success message
-        alert('Thank you for your suggestion!');
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error submitting your suggestion. Please try again.');
+        // Add https:// if no protocol is specified
+        if (website && !website.startsWith('http://') && !website.startsWith('https://')) {
+            website = 'https://' + website;
+        }
+        
+        // Create form data
+        const formData = new FormData();
+        formData.append('entry.648641937', restaurantName);
+        formData.append('entry.1146551704', website);
+        formData.append('entry.401103829', corkage);
+        
+        // Submit to Google Form
+        fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCTlbrDc3I1dgKsh0318ZYgo0CrjSVevpBZJhyBJZzJYbpGw/formResponse', {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        })
+        .then(response => {
+            // Clear form
+            document.getElementById('suggestionForm').reset();
+            
+            // Close modal
+            closeSuggestionModal();
+            
+            // Show success message
+            alert('Thank you for your suggestion!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error submitting your suggestion. Please try again.');
+        });
     });
 });

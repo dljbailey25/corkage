@@ -30,6 +30,28 @@
             </div>
         </div>
 
+        <div id="suggestionModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeSuggestionModal()">&times;</span>
+                <h2>Suggest a Restaurant</h2>
+                <form id="suggestionForm">
+                    <div class="form-group">
+                        <label for="restaurantName">Restaurant Name*</label>
+                        <input type="text" id="restaurantName" name="entry.648641937" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website*</label>
+                        <input type="text" id="website" name="entry.1146551704" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="corkage">Corkage Fee*</label>
+                        <input type="text" id="corkage" name="entry.401103829" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
         <button class="suggest-btn" onclick="openSuggestionModal()">Suggest a Restaurant</button>
     </div>
     <script type="module" src="data.js"></script>
