@@ -585,11 +585,11 @@ h1 {
 .club-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .club-intro {
-    text-align: center;
+    text-align: left;
     margin-bottom: 3rem;
 }
 
