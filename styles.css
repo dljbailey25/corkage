@@ -580,3 +580,207 @@ h1 {
         padding: 0.4rem 0 0.2rem 0;
     }
 }
+
+/* Club Page Styles */
+.club-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.club-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.club-intro h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.club-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.membership-benefits {
+    margin-bottom: 4rem;
+}
+
+.membership-benefits h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.membership-benefits ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.membership-benefits li {
+    padding: 1.5rem;
+    background-color: var(--off-white);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+}
+
+.membership-benefits h4 {
+    color: var(--wine);
+    margin: 0 0 0.5rem 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.membership-benefits p {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.waitlist-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--off-white);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+}
+
+.waitlist-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.waitlist-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.waitlist-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: var(--wine);
+    color: var(--off-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.waitlist-btn:hover {
+    background-color: var(--text);
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .club-content {
+        padding: 1.5rem;
+    }
+
+    .club-intro h2 {
+        font-size: 1.75rem;
+    }
+
+    .club-intro p {
+        font-size: 1.1rem;
+    }
+
+    .waitlist-section {
+        padding: 1.5rem;
+    }
+}
+
+/* About Page Styles */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-content section {
+    margin-bottom: 4rem;
+}
+
+.about-content section:last-child {
+    margin-bottom: 2rem;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-philosophy {
+    background-color: var(--off-white);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+    padding: 2.5rem;
+}
+
+.about-contact {
+    text-align: center;
+}
+
+.contact-link {
+    display: inline-block;
+    color: var(--wine);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--text);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 1.5rem;
+    }
+
+    .about-content section {
+        margin-bottom: 3rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .about-philosophy {
+        padding: 1.5rem;
+    }
+
+    .contact-link {
+        font-size: 1.1rem;
+    }
+}
