@@ -35,18 +35,20 @@ function renderRestaurantCards() {
 
 // Setup filter buttons
 function setupFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            // Filter restaurants
-            const selectedArea = button.dataset.area;
-            filterRestaurants(selectedArea);
+    // Setup button filters
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            filterRestaurants(e.target.dataset.area);
         });
+    });
+
+    // Setup dropdown filter
+    const dropdown = document.querySelector('.filter-dropdown');
+    dropdown.addEventListener('change', (e) => {
+        filterRestaurants(e.target.value);
     });
 }
 

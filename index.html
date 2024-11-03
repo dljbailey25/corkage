@@ -11,12 +11,23 @@
     <div class="container">
         <h1>London Corkage Club</h1>
         <div class="filter-section">
-            <button class="filter-btn active" data-area="all">All Areas</button>
-            <button class="filter-btn" data-area="Central London">Central London</button>
-            <button class="filter-btn" data-area="East London">East London</button>
-            <button class="filter-btn" data-area="West London">West London</button>
-            <button class="filter-btn" data-area="South London">South London</button>
-            <button class="filter-btn" data-area="City">The City</button>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-area="all">All Areas</button>
+                <button class="filter-btn" data-area="Central London">Central London</button>
+                <button class="filter-btn" data-area="East London">East London</button>
+                <button class="filter-btn" data-area="West London">West London</button>
+                <button class="filter-btn" data-area="South London">South London</button>
+                <button class="filter-btn" data-area="City">The City</button>
+            </div>
+            
+            <select class="filter-dropdown">
+                <option value="all">All Areas</option>
+                <option value="Central London">Central London</option>
+                <option value="East London">East London</option>
+                <option value="West London">West London</option>
+                <option value="South London">South London</option>
+                <option value="City">The City</option>
+            </select>
         </div>
         <div class="restaurant-grid">
             <!-- Cards will be rendered here by JavaScript -->
