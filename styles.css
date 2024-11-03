@@ -309,21 +309,46 @@ a {
 .restaurant-grid.list-view {
     display: block;
     max-width: 800px;
+    padding: 1rem 2rem;
 }
 
 .list-view .restaurant-card {
     height: auto;
     margin-bottom: 1rem;
     padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
 }
 
 .list-view .restaurant-card h2 {
-    margin-bottom: 0.75rem;
+    margin: 0;
+    grid-column: 1;
 }
 
 .list-view .style {
+    grid-column: 1;
     white-space: normal;
-    margin-bottom: 0.75rem;
+    margin: 0.5rem 0;
+}
+
+.list-view .corkage {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    text-align: right;
+    margin: 0;
+}
+
+/* Responsive adjustments for list view */
+@media (max-width: 768px) {
+    .restaurant-grid.list-view {
+        padding: 1rem;
+    }
+    
+    .list-view .restaurant-card {
+        padding: 1rem;
+    }
 }
 
 /*******************************
@@ -746,6 +771,27 @@ a {
     /* Hide view toggle when filter buttons become dropdown */
     .view-toggle {
         display: none;
+    }
+
+    .modal-content {
+        margin: 5% auto;
+        padding: 1.5rem;
+        width: 85%;
+        max-height: 90vh;  /* Prevent modal from being taller than viewport */
+        overflow-y: auto;  /* Allow scrolling if content is too tall */
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group input {
+        padding: 0.6rem;
     }
 }
 
