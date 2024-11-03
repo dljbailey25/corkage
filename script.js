@@ -222,25 +222,46 @@ document.addEventListener('DOMContentLoaded', function() {
         filterRestaurants(e.target.value);
     });
 
-    // New view toggle functionality
+    // View toggle functionality
     const viewBtns = document.querySelectorAll('.view-btn');
     const restaurantGrid = document.querySelector('.restaurant-grid');
     
     if (viewBtns.length > 0 && restaurantGrid) {
+        // Function to set view
+        function setView(viewType) {
+            viewBtns.forEach(b => b.classList.remove('active'));
+            const activeBtn = document.querySelector(`[data-view="${viewType}"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            if (viewType === 'list') {
+                restaurantGrid.classList.add('list-view');
+            } else {
+                restaurantGrid.classList.remove('list-view');
+            }
+            
+            localStorage.setItem('viewPreference', viewType);
+        }
+
+        // Add click handlers
         viewBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                viewBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Toggle grid/list view
-                if (btn.dataset.view === 'list') {
-                    restaurantGrid.classList.add('list-view');
-                } else {
-                    restaurantGrid.classList.remove('list-view');
-                }
+                setView(btn.dataset.view);
             });
+        });
+        
+        // Set initial view based on screen size or saved preference
+        const savedView = localStorage.getItem('viewPreference');
+        if (window.innerWidth <= 768) {
+            setView('list');
+        } else if (savedView) {
+            setView(savedView);
+        }
+
+        // Update view on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768) {
+                setView('list');
+            }
         });
     }
 });
