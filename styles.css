@@ -638,9 +638,33 @@ a {
 @media (max-width: 768px) {
     /* Header & Navigation */
     .header-content {
-        padding: 0.6rem 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
     }
-    
+
+    .wine-icon {
+        position: static;
+        margin-right: 0.5rem;
+    }
+
+    .brand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.25rem;
+    }
+
+    .header-waitlist-btn {
+        position: static;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .site-title {
+        font-size: 1.25rem;
+    }
+
     .nav-content {
         gap: 2rem;
         padding: 0 1rem;
@@ -717,6 +741,11 @@ a {
 
     .view-toggle {
         right: 1rem;
+    }
+
+    /* Hide view toggle when filter buttons become dropdown */
+    .view-toggle {
+        display: none;
     }
 }
 
