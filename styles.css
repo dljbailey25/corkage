@@ -22,20 +22,21 @@ body {
 
 .restaurant-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .restaurant-card {
     background-color: var(--off-white);
     border: 1px solid var(--melon);
-    border-radius: 8px;
     padding: 1.5rem;
+    border-radius: 4px;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    width: 100%;
-    min-width: 0;
+    transition: all 0.2s ease;
+    height: fit-content;
 }
 
 .restaurant-card:hover {
@@ -333,6 +334,32 @@ h1 {
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1em;
+}
+
+/* Style the dropdown options */
+.filter-dropdown option {
+    background-color: var(--off-white);
+    color: var(--text);
+    padding: 0.75rem 1rem;
+}
+
+/* Style the dropdown when active/focused */
+.filter-dropdown:focus,
+.filter-dropdown:active {
+    outline: none;
+    border-color: var(--wine);
+    background-color: var(--off-white);
+    color: var(--text);
+}
+
+/* Remove default styling on iOS */
+.filter-dropdown::-ms-expand {
+    display: none;
+}
+
+/* Style for Safari and Chrome */
+.filter-dropdown::-webkit-select {
+    background-color: var(--off-white);
 }
 
 .filter-btn {
