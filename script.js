@@ -193,3 +193,54 @@ document.addEventListener('keydown', function(event) {
         if (suggestionModal) suggestionModal.style.display = 'none';
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Existing filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const filterDropdown = document.querySelector('.filter-dropdown');
+    const restaurantCards = document.querySelectorAll('.restaurant-card');
+    
+    function filterRestaurants(location) {
+        restaurantCards.forEach(card => {
+            if (location === 'all' || card.dataset.location === location) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterRestaurants(btn.dataset.location);
+        });
+    });
+
+    filterDropdown.addEventListener('change', (e) => {
+        filterRestaurants(e.target.value);
+    });
+
+    // New view toggle functionality
+    const viewBtns = document.querySelectorAll('.view-btn');
+    const restaurantGrid = document.querySelector('.restaurant-grid');
+    
+    if (viewBtns.length > 0 && restaurantGrid) {
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                viewBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Toggle grid/list view
+                if (btn.dataset.view === 'list') {
+                    restaurantGrid.classList.add('list-view');
+                } else {
+                    restaurantGrid.classList.remove('list-view');
+                }
+            });
+        });
+    }
+});
