@@ -1,0 +1,775 @@
+:root {
+    --wine: #773344;
+    --melon: #ffa9a3;
+    --papaya-whip: #f8ecd4;
+    --light-yellow: #fffeda;
+    --moonstone: #63b0cd;
+    --text: #231111;
+    --off-white: #FFFDFA;
+}
+
+body {
+    background-color: var(--off-white);
+    color: var(--text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.restaurant-card {
+    background-color: var(--off-white);
+    border: 1px solid var(--melon);
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(119, 51, 68, 0.1);
+    border-color: var(--wine);
+}
+
+.restaurant-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--text);
+}
+
+.style {
+    color: var(--moonstone);
+    margin: 0 0 auto 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.corkage {
+    color: var(--moonstone);
+    margin: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--off-white);
+    margin: 10% auto;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    border: 1px solid var(--melon);
+    color: var(--text);
+}
+
+.modal-content h2 {
+    margin: 0 0 1.5rem 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--wine);
+}
+
+#suggestionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--wine);
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    background-color: white;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--wine);
+    background-color: var(--light-yellow);
+}
+
+.submit-btn {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: var(--text);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(119, 51, 68, 0.1);
+}
+
+.submit-btn:hover {
+    background-color: var(--light-yellow);
+    border-color: var(--wine);
+    box-shadow: 0 4px 12px rgba(119, 51, 68, 0.15);
+}
+
+.close {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--wine);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close:hover {
+    color: var(--moonstone);
+}
+
+.restaurant-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: var(--wine);
+}
+
+.website-link {
+    color: var(--moonstone);
+    text-decoration: none;
+}
+
+.website-link:hover {
+    text-decoration: underline;
+}
+
+.suggestion-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.suggestion-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--wine);
+}
+
+.form-group input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.suggest-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--off-white);
+    color: var(--text);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(119, 51, 68, 0.1);
+    transition: all 0.2s ease;
+    z-index: 999;
+}
+
+.suggest-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(119, 51, 68, 0.15);
+    border-color: var(--wine);
+}
+
+/* Base font styles */
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: var(--wine);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+}
+
+/* Main title */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Restaurant cards */
+.restaurant-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Modal styles */
+.modal-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Form styles */
+.form-group label {
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+}
+
+.form-group input {
+    font-family: 'Lato', sans-serif;
+}
+
+/* Button styles */
+.suggest-btn, .submit-btn {
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.filter-section {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.filter-dropdown {
+    display: none;
+    width: 90%;
+    max-width: 300px;
+    padding: 0.75rem 1rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background-color: var(--off-white);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+/* Style the dropdown options */
+.filter-dropdown option {
+    background-color: var(--off-white);
+    color: var(--text);
+    padding: 0.75rem 1rem;
+}
+
+/* Style the dropdown when active/focused */
+.filter-dropdown:focus,
+.filter-dropdown:active {
+    outline: none;
+    border-color: var(--wine);
+    background-color: var(--off-white);
+    color: var(--text);
+}
+
+/* Remove default styling on iOS */
+.filter-dropdown::-ms-expand {
+    display: none;
+}
+
+/* Style for Safari and Chrome */
+.filter-dropdown::-webkit-select {
+    background-color: var(--off-white);
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--off-white);
+    color: var(--text);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Lato', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--melon);
+}
+
+.filter-btn.active {
+    background-color: var(--wine);
+    color: var(--off-white);
+    border-color: var(--wine);
+}
+
+/* Suggest and Submit Buttons */
+.suggest-btn,
+.submit-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--off-white);
+    color: var(--text);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.suggest-btn:hover,
+.submit-btn:hover {
+    background-color: var(--melon);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Specific positioning for suggest button */
+.suggest-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+}
+
+/* Shared hover state */
+.suggest-btn:hover,
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(119, 51, 68, 0.15);
+    border-color: var(--wine);
+}
+
+/* Form-specific spacing for submit button */
+.submit-btn {
+    margin-top: 0.5rem;
+    align-self: flex-end; /* Aligns the submit button to the right */
+}
+
+.restaurant-card h2 {
+    color: var(--text);
+}
+
+.restaurant-card .style,
+.restaurant-card .corkage {
+    color: var(--moonstone);
+}
+
+/* Any other elements with white text */
+.modal-content .close {
+    color: var(--off-white);
+}
+
+.wine-icon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
+.wine-icon img {
+    width: 48px;
+    height: 48px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-content {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .restaurant-card {
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-content {
+        gap: 1rem;
+    }
+
+    .restaurant-card {
+        height: 90px;
+    }
+}
+
+/* Header Styles */
+.site-header {
+    background-color: var(--off-white);
+    border-bottom: 1px solid var(--melon);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    position: relative;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wine-icon {
+    position: absolute;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.wine-icon img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.site-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text);
+    line-height: 1;
+    text-align: center;
+}
+
+/* Add these styles */
+.sub-nav {
+    border-top: 1px solid var(--melon);
+    background-color: var(--off-white);
+    padding: 0.5rem 0 0.3rem 0;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.25rem 0;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--wine);
+}
+
+.nav-link.active {
+    color: var(--wine);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--wine);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sub-nav {
+        padding: 0.4rem 0 0.2rem 0;
+    }
+}
+
+/* Club Page Styles */
+.club-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.club-intro {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.club-intro h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.club-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.membership-benefits {
+    margin-bottom: 4rem;
+}
+
+.membership-benefits h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.membership-benefits ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.membership-benefits li {
+    padding: 1.5rem;
+    background-color: var(--off-white);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+}
+
+.membership-benefits h4 {
+    color: var(--wine);
+    margin: 0 0 0.5rem 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.membership-benefits p {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--text);
+}
+
+.waitlist-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--off-white);
+    border: 1px solid var(--melon);
+    border-radius: 4px;
+}
+
+.waitlist-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.waitlist-section p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.waitlist-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: var(--wine);
+    color: var(--off-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.waitlist-btn:hover {
+    background-color: var(--text);
+    transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .club-content {
+        padding: 1.5rem;
+    }
+
+    .club-intro h2 {
+        font-size: 1.75rem;
+    }
+
+    .club-intro p {
+        font-size: 1.1rem;
+    }
+
+    .waitlist-section {
+        padding: 1.5rem;
+    }
+}
+
+/* About Page Styles */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-content section {
+    margin-bottom: 4rem;
+}
+
+.about-content section:last-child {
+    margin-bottom: 2rem;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-contact {
+    text-align: center;
+}
+
+.contact-link {
+    display: inline-block;
+    color: var(--wine);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--text);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 1.5rem;
+    }
+
+    .about-content section {
+        margin-bottom: 3rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .contact-link {
+        font-size: 1.1rem;
+    }
+}
