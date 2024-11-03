@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="images/wine-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
@@ -32,6 +33,14 @@
     <main class="main-content">
         <div class="container">
             <div class="filter-section">
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <span class="material-icons">grid_view</span>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <span class="material-icons">view_list</span>
+                    </button>
+                </div>
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-area="all">All Areas</button>
                     <button class="filter-btn" data-area="Central London">Central London</button>

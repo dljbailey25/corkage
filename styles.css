@@ -71,11 +71,12 @@ a {
     padding: 0.75rem 2rem;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .brand {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,6 +150,8 @@ a {
 
 /* Add to the Header section */
 .header-waitlist-btn {
+    position: absolute;
+    right: 2rem;
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
     background-color: var(--wine);
@@ -266,6 +269,54 @@ a {
 .filter-dropdown:active {
     outline: none;
     border-color: var(--wine);
+}
+
+/* Add to Filter Section */
+.view-toggle {
+    margin-bottom: 1rem;
+}
+
+.view-btn {
+    padding: 0.5rem;
+    background: none;
+    border: 1px solid var(--melon);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-btn:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.view-btn:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.view-btn.active {
+    background-color: var(--wine);
+    color: var(--off-white);
+    border-color: var(--wine);
+}
+
+/* List View Styles */
+.restaurant-grid.list-view {
+    display: block;
+    max-width: 800px;
+}
+
+.list-view .restaurant-card {
+    height: auto;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+}
+
+.list-view .restaurant-card h2 {
+    margin-bottom: 0.75rem;
+}
+
+.list-view .style {
+    white-space: normal;
+    margin-bottom: 0.75rem;
 }
 
 /*******************************
