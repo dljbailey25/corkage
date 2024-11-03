@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('waitlistModal');
-    const btn = document.querySelector('.waitlist-btn');
+    const waitlistBtns = document.querySelectorAll('.waitlist-btn, .header-waitlist-btn');
     const span = modal.querySelector('.close');
     const form = document.getElementById('waitlistForm');
 
-    // Open modal
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
+    // Open modal for all waitlist buttons
+    waitlistBtns.forEach(btn => {
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+    });
 
     // Close modal
     span.onclick = function() {
@@ -46,12 +48,13 @@ document.addEventListener('DOMContentLoaded', function() {
             form.reset();
             // Close modal
             modal.style.display = "none";
-            // Show success message (you might want to add this to your HTML)
-            alert('Thank you for joining the waitlist!');
+            
+            // Show notification
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
         })
         .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error submitting the form. Please try again.');
+            console.error('Error submitting form:', error);
         });
     }
 }); 

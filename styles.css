@@ -60,6 +60,9 @@ a {
 .site-header {
     background-color: var(--off-white);
     border-bottom: 1px solid var(--melon);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-content {
@@ -67,6 +70,9 @@ a {
     margin: 0 auto;
     padding: 0.75rem 2rem;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .brand {
@@ -141,6 +147,24 @@ a {
     background-color: var(--wine);
 }
 
+/* Add to the Header section */
+.header-waitlist-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    background-color: var(--wine);
+    color: var(--off-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Lato', sans-serif;
+}
+
+.header-waitlist-btn:hover {
+    background-color: var(--text);
+    transform: translateY(-1px);
+}
+
 /*******************************
  * 5. Restaurant Cards & Filters
  *******************************/
@@ -184,7 +208,7 @@ a {
 
 /* Filter Section */
 .filter-section {
-    margin: 2rem 0;
+    margin: 0.5rem 0;
     text-align: center;
 }
 
@@ -625,6 +649,12 @@ a {
 
     .contact-link {
         font-size: 1.1rem;
+    }
+
+    /* Buttons */
+    .header-waitlist-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 }
 
