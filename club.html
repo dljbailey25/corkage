@@ -63,5 +63,35 @@
             </section>
         </div>
     </main>
+
+    <!-- Add this after your main content -->
+    <div id="waitlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Join the Waitlist</h2>
+            <form id="waitlistForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add this after the modal div -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <p>Thank you for joining the waitlist!</p>
+            <p class="notification-subtext">We'll be in touch when membership becomes available.</p>
+        </div>
+    </div>
+
+    <!-- Add this before the closing body tag -->
+    <script src="club.js"></script>
 </body>
 </html> 
