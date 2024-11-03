@@ -213,6 +213,40 @@ a {
 .filter-section {
     margin: 0.5rem 0;
     text-align: center;
+    position: relative;
+}
+
+.view-toggle {
+    position: absolute;
+    right: 2rem;
+    top: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.view-btn {
+    padding: 0.4rem;
+    background: none;
+    border: 1px solid var(--melon);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0.6;
+}
+
+.view-btn:hover {
+    opacity: 1;
+}
+
+.view-btn.active {
+    background-color: var(--off-white);
+    border-color: var(--wine);
+    color: var(--wine);
+    opacity: 1;
+}
+
+.material-icons {
+    font-size: 20px;
 }
 
 .filter-buttons {
@@ -268,33 +302,6 @@ a {
 .filter-dropdown:focus,
 .filter-dropdown:active {
     outline: none;
-    border-color: var(--wine);
-}
-
-/* Add to Filter Section */
-.view-toggle {
-    margin-bottom: 1rem;
-}
-
-.view-btn {
-    padding: 0.5rem;
-    background: none;
-    border: 1px solid var(--melon);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.view-btn:first-child {
-    border-radius: 4px 0 0 4px;
-}
-
-.view-btn:last-child {
-    border-radius: 0 4px 4px 0;
-}
-
-.view-btn.active {
-    background-color: var(--wine);
-    color: var(--off-white);
     border-color: var(--wine);
 }
 
@@ -706,6 +713,10 @@ a {
     .header-waitlist-btn {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
+    }
+
+    .view-toggle {
+        right: 1rem;
     }
 }
 
