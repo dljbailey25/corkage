@@ -517,42 +517,6 @@ h1 {
     text-align: center;
 }
 
-/* Page Title */
-.page-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    text-align: center;
-    margin: 2rem 0;
-    color: var(--text);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .header-content {
-        padding: 1rem 2rem;
-    }
-
-    .site-title {
-        font-size: 1.2rem;
-    }
-
-    .page-title {
-        font-size: 1.8rem;
-        margin: 1.5rem 0;
-        padding: 0 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .site-title {
-        font-size: 1rem;
-    }
-
-    .page-title {
-        font-size: 1.5rem;
-    }
-}
-
 /* Add these styles */
 .sub-nav {
     border-top: 1px solid var(--melon);
@@ -566,7 +530,7 @@ h1 {
     padding: 0 2rem;
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
