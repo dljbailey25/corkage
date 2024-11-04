@@ -308,29 +308,44 @@ a {
 /* List View Styles */
 .restaurant-grid.list-view {
     display: block;
-    max-width: 800px;
-    padding: 1rem 2rem;
+    max-width: 1000px;
+    padding: 0.5rem 0.5rem;
 }
 
 .list-view .restaurant-card {
     height: auto;
-    margin-bottom: 1rem;
-    padding: 1.5rem;
+    margin-bottom: 0.25rem;
+    padding: 0.25rem 0.25rem;
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1rem;
     align-items: center;
+    border: none;
+    box-shadow: none;
+    background: none;
+    cursor: pointer;
+}
+
+.list-view .restaurant-card:hover {
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background-color: var(--papaya-whip);
+    border-radius: 4px;
 }
 
 .list-view .restaurant-card h2 {
     margin: 0;
     grid-column: 1;
+    font-size: 1.2rem;
 }
 
 .list-view .style {
     grid-column: 1;
     white-space: normal;
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: var(--text);
 }
 
 .list-view .corkage {
@@ -338,6 +353,7 @@ a {
     grid-row: 1 / span 2;
     text-align: right;
     margin: 0;
+    font-size: 0.9rem;
 }
 
 /* Responsive adjustments for list view */
@@ -347,7 +363,7 @@ a {
     }
     
     .list-view .restaurant-card {
-        padding: 1rem;
+        padding: 0.75rem;
     }
 }
 
