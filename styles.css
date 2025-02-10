@@ -37,7 +37,7 @@ a {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .main-content {
@@ -52,14 +52,6 @@ a {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
-}
-
-.intro-section,
-.filter-section,
-.restaurant-grid,
-.suggest-btn {
-    width: 100%;
 }
 
 /*******************************
